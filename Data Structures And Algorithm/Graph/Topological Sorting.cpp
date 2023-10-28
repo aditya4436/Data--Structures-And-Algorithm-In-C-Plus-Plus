@@ -1,3 +1,5 @@
+/// Time Complexity:- O(V+E)
+/// Auxiliary Space:- O(V)
 #include<bits/stdc++.h>
 using namespace std;
 class Graph
