@@ -1,5 +1,6 @@
 /// Time Complexity:- O(V+E)
 /// Auxiliary Space:- O(V)
+/// For Topological Sorting the graph must be a DAG i.e., Directed and Acyclic Graph.
 #include<bits/stdc++.h>
 using namespace std;
 class Graph
