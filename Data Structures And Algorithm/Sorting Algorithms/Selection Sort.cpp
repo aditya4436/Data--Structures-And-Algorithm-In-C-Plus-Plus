@@ -4,7 +4,7 @@
 using namespace std;
 void Selection_Sort(int arr[], int n)
 {
-    int i, j;
+    int i, j, count=0;
     for(i=0; i<n-1; i++)
     {
         int min=i;
@@ -15,8 +15,10 @@ void Selection_Sort(int arr[], int n)
                 min=j;
             }
         }
+        count++;
         swap(arr[i], arr[min]);
     }
+    cout<<"Loop has been executed "<<count<<" times to sort an array.\n";
 }
 void Print_Array(int arr[], int size)
 {
