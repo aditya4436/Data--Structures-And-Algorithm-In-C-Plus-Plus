@@ -1,3 +1,7 @@
+// Best Case Time Complexity:- Omega(N logN).
+// Averaget Case Time Complexity:- Theta(N logN).
+// Worst Case Time Complexity:- O(N^2)''
+// Auxiliary Space Complexity:- O(1).
 #include<iostream>
 using namespace std;
 int Partitioning_Of_Array(int arr[], int low, int high)
