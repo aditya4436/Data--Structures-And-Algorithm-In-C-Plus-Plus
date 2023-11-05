@@ -1,3 +1,5 @@
+// Time Complexity:- O(N logN)
+// Auxiliary Space Complexity:- O(N), due to recursive call stack.
 #include<iostream>
 using namespace std;
 void Heapify(int arr[], int n, int i)
