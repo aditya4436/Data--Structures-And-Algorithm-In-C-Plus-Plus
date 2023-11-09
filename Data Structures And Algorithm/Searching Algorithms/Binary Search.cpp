@@ -1,3 +1,5 @@
+// Time Complexity:- O(log N), where n is the number of elements in an array.
+// Auxiliary Space Complexity:- O(1).
 #include<iostream>
 using namespace std;
 int Binary_Search(int arr[], int low, int high, int target)
