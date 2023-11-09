@@ -27,15 +27,24 @@ vector<int> Count_Sort(vector<int> &input_array)
         output_array[count_array[input_array[i]]-1]=input_array[i];
         count_array[input_array[i]]--;
     }
-    return output_array;
+    for(int i=0; i<n; i++)
+    {
+        input_array[i]=output_array[i];
+    }
+    return input_array;
+}
+void Print_Array(vector<int> &arr, int n)
+{
+    for(int i=0; i<n; i++)
+    {
+        cout<<arr[i]<<"  ";
+    }
 }
 int main()
 {
-    vector<int> input_array={4, 3, 12, 1, 5, 5, 3, 9};
-    vector<int> output_array=Count_Sort(input_array);
-    for(int i=0; i<input_array.size(); i++)
-    {
-        cout<<output_array[i]<<"  ";
-    }
+    vector<int> arr={543, 98, 217, 75, 329};
+    int n=arr.size();
+    vector<int> output_array=Count_Sort(arr);
+    Print_Array(arr, n);
     return 0;
 }
