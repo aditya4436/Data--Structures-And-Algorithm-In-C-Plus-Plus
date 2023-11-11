@@ -1,7 +1,7 @@
 // Time Complexity:- O(n).
 #include<bits/stdc++.h>
 using namespace std;
-int SmallestElement(vector<int> &nums, int n)
+int SmallestAndSecondElement(vector<int> &nums, int n)
 {
     int smallest_element=nums[0];
     int second_smallest_element=INT_MAX;
@@ -24,6 +24,6 @@ int main()
 {
     vector<int> arr={10, 25, -12, -6, 20, 20 };
     int n=arr.size();
-    cout<<"The second smallest element is:\n"<<SmallestElement(arr, n);
+    cout<<"The second smallest element is:\n"<<SmallestAndSecondElement(arr, n);
     return 0;
 }
