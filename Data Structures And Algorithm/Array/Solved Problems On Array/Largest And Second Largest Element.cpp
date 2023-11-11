@@ -19,6 +19,18 @@ int LargestAndSecondLargestElement(vector<int> &arr, int n)
     }
     cout<<"The largest element is:\n"<<largest<<endl;
     return slargest;
+    
+    // Below will print the second largest element and it will handle the cases,
+    // in all the array elements are same.
+    // sort(arr.begin(), arr.end(), greater<int>());
+    // for(int i=1; i<n; i++)
+    // {
+    //     if(arr[i]!=arr[i-1])
+    //     {
+    //         return arr[i];
+    //     }
+    // }
+    // return -1;
 }
 int main()
 {
