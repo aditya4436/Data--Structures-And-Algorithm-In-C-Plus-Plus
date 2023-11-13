@@ -44,26 +44,33 @@ using namespace std;
 //     return -1;
 // }
 
-// OPTIMIZED APPROACH
+// OPTIMIZED APPROACH:-1
+// Time Complexity:- O(n)
+// Space Complexity:- O(1)
+// int MissingNumber(vector<int> &arr, int n)
+// {
+//     int xor1=0, xor2=0;
+//     for(int i=0; i<n-1; i++)
+//     {
+//         xor2=xor2^arr[i];
+//         xor1=xor1^(i+1);
+//     }
+//     xor1=xor1^n;
+//     return (xor1^xor2);
+// }
+
+// OPTIMIZED APPROACH:-2
 // Time Complexity:- O(n)
 // Space Complexity:- O(1)
 int MissingNumber(vector<int> &arr, int n)
 {
-    // int sum2=0;
-    // int sum1=(n*(n+1))/2;
-    // for(int i=0; i<n-1; i++)
-    // {
-    //     sum2+=arr[i];
-    // }
-    // return (sum1-sum2);
-    int xor1=0, xor2=0;
+    int sum2=0;
+    int sum1=(n*(n+1))/2;
     for(int i=0; i<n-1; i++)
     {
-        xor2=xor2^arr[i];
-        xor1=xor1^(i+1);
+        sum2+=arr[i];
     }
-    xor1=xor1^n;
-    return (xor1^xor2);
+    return (sum1-sum2);
 }
 int main()
 {
