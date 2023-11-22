@@ -1,3 +1,5 @@
+// Time Complexity:- O(n*m)
+// Space Comlexity:- O(n*m)
 #include<bits/stdc++.h>
 using namespace std;
 vector<int> PrintSpiral(vector<vector<int>> &arr)
