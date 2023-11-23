@@ -94,7 +94,7 @@ using namespace std;
 // }
 
 // OPTIMIZED APPROACH
-// Dutch National Algorithm
+// Dutch National Flag Algorithm
 // Time Complexity:- O(n)
 // Space Complexity:- O(1)
 vector<int> SortZeroesOnesAndTwos(vector<int> &arr)
