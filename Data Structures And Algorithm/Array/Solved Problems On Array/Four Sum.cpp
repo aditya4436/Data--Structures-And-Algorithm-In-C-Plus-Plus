@@ -63,7 +63,8 @@ using namespace std;
 
 // OPTIMIZED APPROACH
 // Time Complexity:- O(n^3).
-// Space Complexity:- O(no. of quadruplets).
+// Space Complexity:- O(no. of quads), the space used is to return the answer
+//                    and not to solve the problem.
 vector<vector<int>> FourSum(vector<int> &arr, int target)
 {
     sort(arr.begin(), arr.end());
