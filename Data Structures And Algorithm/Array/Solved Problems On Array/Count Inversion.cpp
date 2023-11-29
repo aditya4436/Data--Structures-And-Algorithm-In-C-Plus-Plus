@@ -24,7 +24,7 @@ using namespace std;
 // Time Complexity:- O(N LogN), N is the size of the vetor.
 // Auxiliary Space Complexity:- O(N), we are using additional space while merging
 //                              the elements of the vector.
-int Merge(vector<int> arr, int low, int mid, int high)
+int Merge(vector<int> &arr, int low, int mid, int high)
 {
     vector<int> temp;
     int left=low, count=0;
