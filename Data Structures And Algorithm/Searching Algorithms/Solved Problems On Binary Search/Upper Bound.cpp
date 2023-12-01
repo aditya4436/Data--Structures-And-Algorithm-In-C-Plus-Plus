@@ -2,7 +2,7 @@
 using namespace std;
 // Time Complexity:- O(log n)
 // Space Complexity:- O(1)
-int LowerBound(vector<int> &arr, int target)
+int UpperBound(vector<int> &arr, int target)
 {
     int ans=arr.size();
     int low=0, high=ans-1;
@@ -25,6 +25,6 @@ int main()
 {
     vector<int> arr={1,3,7,9,11,12,45};
     int target=2;
-    cout<<LowerBound(arr, target);
+    cout<<UpperBound(arr, target);
     return 0;
 }
