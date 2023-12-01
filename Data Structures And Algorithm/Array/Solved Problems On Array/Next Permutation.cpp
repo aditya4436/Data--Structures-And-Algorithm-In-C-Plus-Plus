@@ -11,14 +11,19 @@ using namespace std;
 // Space Complexity:- O(1)
 vector<int> NextPermutation(vector<int> &arr)
 {
-    int n=arr.size(), index=-1;
+    int index=-1;
     for(int i=n-2; i>=0; i--)
     {
-        if(arr[i]>arr[i+1])
+        if(arr[i]<arr[i+1])
         {
             index=i;
             break;
         }
+    }
+    if(index==-1)
+    {
+        reverse(arr.begin(), arr.end());
+        return arr;
     }
     for(int i=n-1; i>index; i--)
     {
@@ -27,11 +32,6 @@ vector<int> NextPermutation(vector<int> &arr)
             swap(arr[index], arr[i]);
             break;
         }
-    }
-    if(index==-1)
-    {
-        reverse(arr.begin(), arr.end());
-        return arr;
     }
     reverse(arr.begin()+index+1, arr.end());
     return arr;
