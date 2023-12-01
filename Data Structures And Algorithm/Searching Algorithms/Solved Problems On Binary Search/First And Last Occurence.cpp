@@ -24,56 +24,116 @@ using namespace std;
 //     return {first, last};
 // }
 
-// OPTIMIZED APPROACH USING BINARY SEARCH
+// OPTIMIZED APPROACH USING BINARY SEARCH-1
 // Time Complexity:- 2*O(log(n))
 // Space Complexity:- O(1)
-int LowerBound(vector<int> &arr, int target)
+// int LowerBound(vector<int> &arr, int target)
+// {
+//     int low=0, high=arr.size()-1;
+//     int ans=-1;
+//     while(low<=high)
+//     {
+//         int mid=(low+high)/2;
+//         if(arr[mid]>=target)
+//         {
+//             ans=mid;
+//             high=mid-1;
+//         }
+//         else
+//         {
+//             low=mid+1;
+//         }
+//     }
+//     return ans;
+// }
+// int UpperBound(vector<int> &arr, int target)
+// {
+//     int low=0, high=arr.size()-1;
+//     int ans=-1;
+//     while(low<=high)
+//     {
+//         int mid=(low+high)/2;
+//         if(arr[mid]>target)
+//         {
+//             ans=mid;
+//             high=mid-1;
+//         }
+//         else
+//         {
+//             low=mid+1;
+//         }
+//     }
+//     return ans;
+// }
+// pair<int,int> FirstAndLastOccurence(vector<int> &arr, int target)
+// {
+//     int first=LowerBound(arr, target);
+//     if(first==-1 || arr[first]!=target)
+//     {
+//         return{-1, -1};
+//     }
+//     int last=UpperBound(arr, target);
+//     return{first, last-1};
+// }
+
+// OPTIMIZED APPROACH USING BINARY SEARCH-2
+// Time Complexity:- O(log n)
+// Space Complexity:- O(1)
+int FirstOccurence(vector<int> &arr, int target)
 {
     int low=0, high=arr.size()-1;
-    int ans=-1;
+    int first=-1;
     while(low<=high)
     {
         int mid=(low+high)/2;
-        if(arr[mid]>=target)
+        if(arr[mid]==target)
         {
-            ans=mid;
+            first=mid;
             high=mid-1;
         }
-        else
+        else if(arr[mid]<target)
         {
             low=mid+1;
         }
+        else
+        {
+            high=mid-1;
+        }
     }
-    return ans;
+    return first;
 }
-int UpperBound(vector<int> &arr, int target)
+int LastOccurence(vector<int> &arr, int target)
 {
     int low=0, high=arr.size()-1;
-    int ans=-1;
+    int second=-1;
     while(low<=high)
     {
         int mid=(low+high)/2;
-        if(arr[mid]>target)
+        if(arr[mid]==target)
         {
-            ans=mid;
-            high=mid-1;
+            second=mid;
+            low=mid+1;
         }
-        else
+        else if(arr[mid]<target)
         {
             low=mid+1;
         }
+        else
+        {
+            high=mid-1;
+        }
     }
-    return ans;
+    return second;
 }
 pair<int,int> FirstAndLastOccurence(vector<int> &arr, int target)
 {
-    int first=LowerBound(arr, target);
-    if(first==arr.size() || arr[first]!=target)
+    int first=FirstOccurence(arr, target);
+    if(first==-1 || arr[first]!=target)
     {
         return{-1, -1};
     }
-    int last=UpperBound(arr, target);
-    return{first, last-1};
+    int last=LastOccurence(arr, target);
+    return{first, last};
 }
 int main()
 {
