@@ -24,6 +24,9 @@ using namespace std;
 //     return {first, last};
 // }
 
+// OPTIMIZED APPROACH USING BINARY SEARCH
+// Time Complexity:- 2*O(log(n))
+// Space Complexity:- O(1)
 int LowerBound(vector<int> &arr, int target)
 {
     int low=0, high=arr.size()-1;
