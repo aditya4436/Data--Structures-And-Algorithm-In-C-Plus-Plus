@@ -1,6 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
-int SearchSortedRotatedArray(vector<int> &arr, int target)
+// Time Complexity:- O(n)
+// Space Complexity:- O(1)
+int SearchInSortedRotatedArray(vector<int> &arr, int target)
 {
     int n=arr.size();
     int low=0, high=n-1;
@@ -40,6 +42,6 @@ int main()
 {
     vector<int> arr={7,8,9,1,2,3,4,5,6};
     int target=6;
-    cout<<SearchSortedRotatedArray(arr, target);
+    cout<<SearchInSortedRotatedArray(arr, target);
     return 0;
 }
