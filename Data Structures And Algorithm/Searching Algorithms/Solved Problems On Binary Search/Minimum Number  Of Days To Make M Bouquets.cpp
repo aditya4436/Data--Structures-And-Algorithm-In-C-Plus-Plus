@@ -1,7 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 // Time Compelxity:- O(maximum-minimum), to find the day and O(n) to check if
-//                   it possible or not to make 'm' bouquets/
+//                   it possible or not to make 'm' bouquets. Overall Time
+//                   Complexity is O(n)*O(maximum-minimum).
 // Space Complexity:- O(1)
 bool IsPossible(vector<int> &arr, int day, int k, int m){
     int result=0, count=0;
