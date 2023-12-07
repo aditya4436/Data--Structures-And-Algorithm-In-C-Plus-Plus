@@ -31,7 +31,7 @@ bool IsPossible(vector<int> &arr, int distance, int cows){
 //     return result;
 // }
 
-// Time Complexity:- O(n log n)+O(high), where 'high' is the 
+// Time Complexity:- O(n log n)+O(log(high)), where 'high' is the 
 //                   maximum difference between the maximum element
 //                   stall and minimum element of stall.
 // Space Complexity:- O(1)
