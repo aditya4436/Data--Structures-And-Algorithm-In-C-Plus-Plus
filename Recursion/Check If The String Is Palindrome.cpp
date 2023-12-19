@@ -2,7 +2,7 @@
 using namespace std;
 // Time Complexity:- O(n/2) because the function checks till the
 //                   (n/2)th character of the string.
-// Space Complexity:- O(n/2) this space is taken by the recursive stack
+// Space Complexity:- O(n/2) this space is taken by the internal stack space.
 bool IsPalindrome(string s, int n, int i){
     if(i>=n/2){
         return true;
