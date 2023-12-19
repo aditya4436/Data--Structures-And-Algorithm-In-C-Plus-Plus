@@ -1,30 +1,20 @@
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
-int Fibonacci_Numbers(int n)
-{
-    if(n==0)
-    {
-        return 0;
+// Time Complexity:- O(2^n), because everytime we are calling the
+//                   function times.
+// Space Complexity:- O(n), at maximum there could be n function calls
+//                    waiting in the recursion stack since we need to
+//                    calculate the nth fibonacci number for which we 
+//                    we also need to calculate (n-1) fibonacci number
+//                    before it.
+int FibonacciNumber(int n){
+    if(n<=1){
+        return n;
     }
-    else if(n==1)
-    {
-        return 1;
-    }
-    else
-    {
-        return Fibonacci_Numbers(n-1)+Fibonacci_Numbers(n-2);
-    }
+    return FibonacciNumber(n-1)+FibonacciNumber(n-2);
 }
-int main()
-{
-    int number_of_fibonacci_series_to_print=10;
-    int i=0;
-    cout<<number_of_fibonacci_series_to_print<<" Fibonacci series are as follow:\n";
-    while(i<number_of_fibonacci_series_to_print)
-    {
-        cout<<Fibonacci_Numbers(i)<<"  ";
-        i++;
-    }
+int main(){
+    int n=4;
+    cout<<FibonacciNumber(n);
     return 0;
 }
-
