@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-// Time Complexity:- O(2^n+K), '2^n' is for the recursive calls 
+// Time Complexity:- O(2^n*K), '2^n' is for the recursive calls 
 //                   and 'k' is the assumed to be the average size
 //                   of the subsets.
 // Space Complexity:- O(2^n)
