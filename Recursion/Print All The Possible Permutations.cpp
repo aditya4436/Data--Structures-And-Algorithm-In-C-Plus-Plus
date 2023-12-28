@@ -4,29 +4,49 @@ using namespace std;
 //                   and "n" to traverse the array.
 // Space Complexity:- O(n)+O(n), "n" for storing the generated permutation in "ds"
 //                    and another "n" (freq) to mark the visited or pushed element of "nums"
-void GeneratePermuatation(vector<int> &ds, vector<int> &nums, vector<vector<int>> &ans, int freq[]){
-    if(ds.size()==nums.size()){
-        ans.push_back(ds);
+// void GeneratePermuatation(vector<int> &ds, vector<int> &nums, vector<vector<int>> &ans, int freq[]){
+//     if(ds.size()==nums.size()){
+//         ans.push_back(ds);
+//         return;
+//     }
+//     for(int i=0; i<nums.size(); i++){
+//         if(!freq[i]){
+//             ds.push_back(nums[i]);
+//             freq[i]=1;
+//             GeneratePermuatation(ds, nums, ans, freq);
+//             freq[i]=0;
+//             ds.pop_back();
+//         }
+//     }
+// }
+// vector<vector<int>> PrintPermutaions(vector<int> &nums){
+//     vector<vector<int>> ans;
+//     vector<int> ds;
+//     int freq[nums.size()];
+//     for(int i=0; i<nums.size(); i++){
+//         freq[i]=0;
+//     }
+//     GeneratePermuatation(ds, nums, ans, freq);
+//     return ans;
+// }
+
+// OPTIMIZED APPROACH
+// Time Complexity:- O(n!)*O(n)
+// Space Complexity:- O(n), it is the recurion depth.
+void GeneratePermuatation(int index,vector<int> &nums, vector<vector<int>> &ans){
+    if(index==nums.size()){
+        ans.push_back(nums);
         return;
     }
-    for(int i=0; i<nums.size(); i++){
-        if(!freq[i]){
-            ds.push_back(nums[i]);
-            freq[i]=1;
-            GeneratePermuatation(ds, nums, ans, freq);
-            freq[i]=0;
-            ds.pop_back();
-        }
+    for(int i=index; i<nums.size(); i++){
+        swap(nums[index], nums[i]);
+        GeneratePermuatation(index+1, nums, ans);
+        swap(nums[index], nums[i]);
     }
 }
 vector<vector<int>> PrintPermutaions(vector<int> &nums){
     vector<vector<int>> ans;
-    vector<int> ds;
-    int freq[nums.size()];
-    for(int i=0; i<nums.size(); i++){
-        freq[i]=0;
-    }
-    GeneratePermuatation(ds, nums, ans, freq);
+    GeneratePermuatation(0, nums,ans);
     return ans;
 }
 int main()
