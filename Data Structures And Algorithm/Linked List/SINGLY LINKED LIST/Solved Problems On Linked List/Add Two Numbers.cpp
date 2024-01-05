@@ -28,6 +28,8 @@ Node *AddTwoNumbers(Node *num1, Node *num2)
     int carry=0;
     while(num1 || num2 || carry){
         int sum=0;
+        // Both if blocks are executed if both the conditions are true.
+        // Otherwise one of them will be executed.
         if(num1){
             sum+=num1->data;
             num1=num1->next;
