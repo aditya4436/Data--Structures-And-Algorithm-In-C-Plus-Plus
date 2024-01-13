@@ -8,6 +8,9 @@ struct Node{
         next=NULL;
     }
 };
+// Time Complexity:- O(n), because in the worst case we may have to delete
+// 		     to delete the last node.
+// Space Complexity:- O(1)
 Node *DeleteNode(Node *head, int pos)
 {
 	if(head==NULL){
