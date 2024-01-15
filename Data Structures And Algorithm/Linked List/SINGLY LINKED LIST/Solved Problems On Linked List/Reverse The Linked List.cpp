@@ -21,6 +21,20 @@ struct Node *ReversedLinkedList(struct Node *head){
     }
     return newHead;
 }
+
+// Time Complexity:- O(n)
+// Space Complexity:- O(n),this is the recursive stack space.
+//                    Note:- We have not used any extra space to solve the problem.
+struct Node *ReversedLinkedList(struct Node *head){
+    if(head==NULL || head->next==NULL){
+        return head;
+    }
+    Node *newHead=reverseLinkedList(head->next);
+    Node *front=head->next;
+    front->next=head;
+    head->next=NULL;
+    return newHead;
+}
 void Traverse(struct Node *head){
     struct Node *current=head;
     if(head==NULL){
