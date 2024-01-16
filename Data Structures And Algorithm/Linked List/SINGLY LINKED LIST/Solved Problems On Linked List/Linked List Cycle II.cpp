@@ -11,6 +11,30 @@ struct Node{
 
     }
 };
+// BRUTE FORCE
+// Time Complexity:- O(n)*O(log(n)), O(n) to traverse the
+//                   linked list and O(log(n)) to  search
+//                   the node where loop starts.
+// Space Complexity:- O(n), because in the worst case 
+//                    we have to insert all the elements
+//                    in linked list.
+// struct Node *StartingLoopOfLinkedList(struct Node *head){
+//     if(head==NULL || head->next==NULL){
+//         return NULL;
+//     }
+//     struct Node *temp=head;
+//     map<Node*, int> mpp;
+//     while(temp!=NULL){
+//         if(mpp.find(temp)!=mpp.end()){
+//             return temp;
+//         }
+//         mpp[temp]=1;
+//         temp=temp->next;
+//     }
+//     return NULL;
+// }
+
+// OPTIMIZED APPROACH
 // Time Complexity:- O(n), because we are traversing the entire linked list.
 // Space Complexity:- O(1), because we are not using any extra space.
 struct Node *FindStartingPointOfACircleInLinkedList(struct Node *head){
