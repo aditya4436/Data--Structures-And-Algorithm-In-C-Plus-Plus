@@ -11,6 +11,30 @@ struct Node{
 
     }
 };
+// BRUTE FORCE APPROACH
+// Time Complexity:- O(n)*O(2logn), O(n) to traverse the linked list
+//                   O(2log(n)), log(n) to check if the node is in the
+//                   map or not and another log(n) to insert the nodes.
+// Space Complexity: O(n), because we are storing the all elements in the map
+//                   in the worst case.
+// bool DetectACycleInALinkedList(struct Node *head){
+//     if(head==NULL || head->next==NULL){
+//         return false;
+//     }
+//     map<Node*, bool> mpp;
+//     Node *temp=head;
+//     while(temp!=NULL){
+//         if(mpp.find(temp)!=mpp.end()){
+//             return true;
+//         }
+//         mpp[temp]=true;
+//         mpp.insert({temp, true});
+//         temp=temp->next;
+//     }
+//     return false;
+// }
+
+// OPTIMAL APPROACH
 // Time Complexity:- O(n), 'n' is the number nodes in the
 //                   linked list.
 // Space Complexity:- O(1)
