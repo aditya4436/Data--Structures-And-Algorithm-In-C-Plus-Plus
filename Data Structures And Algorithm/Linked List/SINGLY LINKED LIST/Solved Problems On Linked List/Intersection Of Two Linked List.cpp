@@ -11,6 +11,28 @@ struct Node{
 
     }
 };
+// BRUTE FORCE APPROACH
+// Time Complexity:- O(n1)+O(n2), O(n1) is to put the nodes into the
+//                   map.
+// Space Complexity:- O(n1), because we are inserting the nodes of the
+//                    first linked list into the map.
+// struct Node *IntersectionOfTwoList(struct Node *head1, struct Node *head2){
+//     unordered_map<Node*, int> mpp;
+//     struct Node *temp=head1;
+//     while(temp){
+//         mpp[temp]=1;
+//         temp=temp->next;
+//     }
+//     temp=head2;
+//     while(temp){
+//         if(mpp.find(temp)!=mpp.end()){
+//             return temp;
+//         }
+//         temp=temp->next;
+//     }
+//     return NULL;
+// }
+
 // Time Complexity:- O(M + N), where M and N are the lengths of the linked 
 //                   lists head1 and head2. The function traverses both linked 
 //                   lists in a loop until either the intersection point is found
