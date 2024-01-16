@@ -33,6 +33,52 @@ struct Node{
 //     return NULL;
 // }
 
+// int Count(struct Node *head){
+//     if(head==NULL){
+//         return 0;
+//     }
+//     int count=0;
+//     struct Node *temp=head;
+//     while(temp!=NULL){
+//         temp=temp->next;
+//         count++;
+//     }
+//     return count;
+// }
+// struct Node *CollisionPoint(struct Node *head1, struct Node *head2, int difference){
+//     struct Node *temp1=head1;
+//     struct Node *temp2=head2;
+//     for(int i=0; i<difference; i++){
+//         temp1=temp1->next;
+//     }
+//     while(temp1!=temp2){
+//         temp1=temp1->next;
+//         temp2=temp2->next;
+//     }
+//     return temp1;
+// }
+// Time Complexity:- O(n1)+O(n2)+O(difference)+O(n1 or n2)
+//                   O(n1) and O(n2) to count the number of nodes.
+//                   O(difference) is to traverse the longer list
+//                   till the node after which the number nodes in
+//                   list1 and list2 are same. O(n1 or n2) to find 
+//                   the collision point.
+// Space Complexity:- O(1)
+// struct Node *IntersectionOfTwoList(struct Node *head1, struct Node *head2){
+//     int n1=Count(head1);
+//     int n2=Count(head2);
+//     int difference;
+//     struct Node *temp1=head1;
+//     struct Node *temp2=head2;
+//     if(n1>n2){
+//         return CollisionPoint(head1, head2, n1-n2);
+//     }
+//     else{
+//         return CollisionPoint(head2, head1, n2-n1);
+//     }
+//     return NULL;
+// }
+
 // Time Complexity:- O(M + N), where M and N are the lengths of the linked 
 //                   lists head1 and head2. The function traverses both linked 
 //                   lists in a loop until either the intersection point is found
