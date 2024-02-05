@@ -40,6 +40,34 @@ void Inorder_Traversal_Of_BST(struct BST *root)
          Inorder_Traversal_Of_BST(root->right);
     }
 }
+
+// Iterative Approach
+// vector<int> getInOrderTraversal(TreeNode *root)
+// {
+//     // Write your code here.
+//     vector<int> ans;
+//     if(root==NULL){
+//         return ans;
+//     }
+//     stack<TreeNode*> st;
+//     TreeNode *node=root;
+//     while(true){
+//         if(node!=NULL){
+//             st.push(node);
+//             node=node->left;
+//         }
+//         else{
+//             if(st.empty()==true){
+//                 break;
+//             }
+//             node=st.top();
+//             st.pop();
+//             ans.push_back(node->data);
+//             node=node->right;
+//         }
+//     }
+//     return ans;
+// }
 int main()
 {
     root=Insert_A_Node_In_BST(root, 50);
