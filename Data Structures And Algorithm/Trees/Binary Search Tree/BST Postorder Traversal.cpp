@@ -42,6 +42,35 @@ void Postorder_Traversal(Node *root)
         cout<<root->data<<"  ";
     }
 }
+
+// Iterative Approach
+// vector<int> postorderTraversal(TreeNode *root)
+// {
+//     // Write your code here.
+//     vector<int> ans;
+//     if(root==NULL){
+//         return ans;
+//     }
+//     stack<TreeNode*> st1, st2;
+//     st1.push(root);
+//     while(!st1.empty()){
+//         TreeNode *node=st1.top();
+//         st1.pop();
+//         st2.push(node);
+//         if(node->left){
+//             st1.push(node->left);
+//         }
+//         if(node->right){
+//             st1.push(node->right);
+//         }
+//     }
+//     while(!st2.empty()){
+//         TreeNode *node=st2.top();
+//         st2.pop();
+//         ans.push_back(node->data);
+//     }
+//     return ans;
+// }
 int main()
 {
     struct Node *root=NULL;
