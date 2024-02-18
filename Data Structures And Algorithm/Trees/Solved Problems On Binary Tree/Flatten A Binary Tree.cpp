@@ -9,6 +9,24 @@ struct TreeNode {
     TreeNode *right;
     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
+
+// Time Complexity:- O(n), because we are visiting every node.
+// Space Complexity: O(1), because we are not using any extra space.
+// void flatten(TreeNode* root) {
+//     TreeNode *current=root;
+//     while(current){
+//         if(current->left){
+//             TreeNode *predecessor=current->left;
+//             while(predecessor->right){
+//                 predecessor=predecessor->right;
+//             }
+//             predecessor->right=current->right;
+//             current->right=current->left;
+//             current->left=NULL;
+//         }
+//         current=current->right;
+//     }
+
 /*
 Time Complexity: O(n) - Visit each node once in the binary tree
 Space Complexity: O(h) - Space used by the recursive call stack,
