@@ -16,6 +16,31 @@ Space Complexity: O(h) - Space used by the recursive call stack,
                          In the worst case space complexity may
                          go upto O(n)
 */
+// void flattenBinaryTree(TreeNode<int>* root){
+//     stack<TreeNode<int>*>st;
+//     st.push(root);
+//     while(!st.empty()){
+//         TreeNode<int> *current=st.top();
+//         st.pop();
+//         if(current->right){
+//             st.push(current->right);
+//         }
+//         if(current->left){
+//             st.push(current->left);
+//         }
+//         if(!st.empty()){
+//             current->right=st.top();
+//         }
+//         current->left=NULL;
+//     }
+// }
+/*
+Time Complexity: O(n) - Visit each node once in the binary tree
+Space Complexity: O(h) - Space used by the recursive call stack,
+                         where h is the height of the binary tree.
+                         In the worst case space complexity may
+                         go upto O(n)
+*/
 // Helper function to flatten the binary tree
 void flattenBinaryTree(TreeNode* root, TreeNode*& previous) {
     if (!root) {
