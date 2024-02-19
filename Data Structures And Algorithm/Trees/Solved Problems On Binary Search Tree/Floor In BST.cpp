@@ -20,17 +20,19 @@ int floorInBST(TreeNode<T>* root, T X) {
     // Space Complexity: O(1)
     // The space complexity is constant as we are using only a constant amount of extra space.
 
-    int ans = INT_MAX;
-    while (root) {
-        if (root->val == X) {
-            ans = root->val;
+    // Write your code here.
+    int ans=INT_MAX;
+    while(root){
+        if(root->val==X){
+            ans=root->val;
             return ans;
         }
-        if (X > root->val) {
-            ans = root->val;
-            root = root->right;
-        } else {
-            root = root->left;
+        if(X<root->val){
+            root=root->left;
+        }
+        else{
+            ans=root->val;
+            root=root->right;
         }
     }
     return ans;
