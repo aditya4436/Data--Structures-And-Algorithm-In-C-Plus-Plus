@@ -1,36 +1,32 @@
-// Time Complexity:- O(N^2), 'N' is the number of element.
 #include<bits/stdc++.h>
-#include<algorithm>
 using namespace std;
-void Insertion_Sort(int arr[], int n)
-{
-    int count=0;
-    for(int i=0; i<n; i++)
-    {
-        int j=i;
-        while(j>0 && arr[j-1]>arr[j])
-        {
-            swap(arr[j-1], arr[j]);
+
+// Time Complexity:- O(n^2)
+// Space Complexity:- O(1)
+void InsertionSort(int arr[], int n){
+    for(int i=1; i<n; i++){
+        int key=arr[i];
+        int j=i-1;
+
+        while(j>=0 && arr[j]>key){
+            arr[j+1]=arr[j];
             j--;
-            count++;
         }
+        arr[j+1]=key;
     }
-    cout<<"Loop is executed "<<count<<" times to sort an array.\n";
 }
-void Print_Array(int arr[], int size)
-{
-    int i;
-    for(i=0; i<size; i++)
-    {
+
+void print(int arr[], int n){
+    for(int i=0; i<n; i++){
         cout<<arr[i]<<"  ";
     }
 }
-int main()
-{
-    int arr[]={64, 34, 25, 12, 22, 11, 90};
-    int size=sizeof(arr)/sizeof(arr[0]);
-    Insertion_Sort(arr, size);
-    cout<<"Sorted array is:\n";
-    Print_Array(arr, size);
+
+int main(){
+    int arr[]={8,9,2,5,4,7,1,10};
+    int n=sizeof(arr)/sizeof(arr[0]);
+
+    InsertionSort(arr, n);
+    print(arr, n);
     return 0;
 }
