@@ -5,7 +5,7 @@ using namespace std;
 int Minimum(int arr[], int i, int n){
     int smallest=arr[i], pos=i;
 
-    for (int j=i+1; j<n-1; j++) {
+    for (int j=i+1; j<n; j++) {
         if (arr[j]<smallest) {
             smallest=arr[j];
             pos=j;
