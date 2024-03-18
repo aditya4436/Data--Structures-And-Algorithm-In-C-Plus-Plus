@@ -2,6 +2,17 @@
 #include <vector>
 using namespace std;
 
+// Time Complexity:- O(n log n)
+// Space Comlexity:- O(1) in the worst case O(log n)
+// class Solution {
+// public:
+//     int findKthLargest(vector<int>& nums, int k) {
+//         int n=nums.size();
+//         sort(nums.begin(), nums.end());
+//         return nums[n-k];
+//     }
+// };
+
 // Time Complexity:- O(n), in the worst case it is O(n^2).
 // Space Complexity:- O(log n), in the worst case it can be O(n).
 class Solution {
